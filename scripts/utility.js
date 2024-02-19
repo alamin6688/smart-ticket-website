@@ -1,3 +1,21 @@
+// Buy Tickets Btn Function
+const buyTicketBtn = document.getElementById('buy-tickets');
+buyTicketBtn.addEventListener('click', function(){
+     window.scrollTo({
+        top: 1400,
+        left:0,
+        behavior:'smooth'
+    });
+});
+// See Offers Btn Function
+const buyBtn = document.getElementById('scrollBtn');
+buyBtn.addEventListener('click', function(){
+     window.scrollTo({
+        top: 1400,
+        left:0,
+        behavior:'smooth'
+    });
+});
 let sum =0;
 let count = 1;
 const isclickBtn = false;
@@ -11,17 +29,15 @@ for (const btn of allBtn) {
         }
         e.target.style.backgroundColor = "#1DD100";
        const btnValue = e.target.innerText;
-       
         // decrement Seat count section
         const decrementCount = parseInt(document.getElementById('sit-ount-decrement').innerText)
         const decri = decrementCount - count;
         document.getElementById('sit-ount-decrement').innerText = decri;
-        // ----------selection section -------------------
+        // selection section 
         const orederSit = parseInt(document.getElementById('sit-count').innerText);
         const increment = orederSit + count
         document.getElementById('sit-count').innerText = increment;
         // Append Html 
-        
        const selectedItem =  document.getElementById('append-html')
         const li = document.createElement('li')
         li.innerHTML = `${btnValue} &nbsp; &nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  Economoy
@@ -33,7 +49,6 @@ for (const btn of allBtn) {
         const total = TotalValue + 550;
         document.getElementById('totalValue').innerText = total
         document.getElementById('grand_total-value').innerText = total
-        
         // const nextBtn = document.getElementById('next-btn');
         // nextBtn.removeAttribute('disabled')
         sum++;
@@ -41,12 +56,10 @@ for (const btn of allBtn) {
             const apply_Btn = document.getElementById('Apply');
             apply_Btn.removeAttribute('disabled')
         }
-        
         btn.setAttribute('disabled', true)
         nextSection()
     })
 }
-
 const applyBtn = document.getElementById('Apply'); 
 applyBtn.addEventListener('click', function(e){
     const TotalValue = parseInt(document.getElementById('totalValue').innerText);
